@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+       <suite name="TestNgTutorials" >
+    <listeners>
+        <listener class-name="guru99DemoTests.mainTest.IListeners"/>
+    </listeners>
+
+    <test name="cookies">
+        <classes>
+            <class name="guru99DemoTests.seleniumTab.CookieHandlingLink">
+                <methods>
+                    <include name="cookieHandlingTest"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+
+    <test name="accessLink">
+        <classes>
+            <class name="guru99DemoTests.seleniumTab.AccessingLinkTest">
+                <methods>
+                    <include name="testAccessingLink"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+
+    <test name="ajaxLink">
+        <classes>
+            <class name="guru99DemoTests.seleniumTab.AjaxDemo">
+                <methods>
+                    <include name="testAjaxDemoLink"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+
+</suite>
