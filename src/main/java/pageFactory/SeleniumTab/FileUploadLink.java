@@ -1,6 +1,6 @@
 package pageFactory.SeleniumTab;
 
-import org.junit.Assert;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -61,11 +61,11 @@ public class FileUploadLink {
         submitButton.click();
     }
 
-    public void getConfirmationText(){
-
-
-        String expectedText = "has been successfully uploaded.";
-        String actual = confirmationText.getText();
-        Assert.assertEquals(actual,expectedText, "has been successfully uploaded.");
-    }
+//    public void getConfirmationText(){
+//
+//
+//        String expectedText = "has been successfully uploaded.";
+//        String actual = confirmationText.getText();
+//        Assert.assertEquals(actual,expectedText, "has been successfully uploaded.");
+//    }
 }

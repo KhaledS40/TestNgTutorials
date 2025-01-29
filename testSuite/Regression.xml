@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNgTutorials" thread-count="2" parallel="tests">
+    <test name="Regression Tests">
+        <packages>
+
+            <package name="guru99DemoTests.agileProjectRegression"/>
+
+        </packages>
+
+
+<!--        <classes>-->
+<!--            <class name="guru99DemoTests.seleniumTab"/>-->
+<!--        </classes>-->
+    </test>
+</suite>

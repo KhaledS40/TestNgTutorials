@@ -19,11 +19,10 @@
 
         </classes>
     </test>
-    <test name="EdgeTest">
+    <test name="Firefox">
 
         <classes>
             <class name = "guru99DemoTests.seleniumTab.ToolTipLink"/>
-
 
         </classes>
     </test>
