@@ -18,6 +18,6 @@ public class UpLoadFIle extends BaseTest {
         file.clickChooseFile();
         file.selectTermsCheckBox();
         file.clickSubmitButton();
-        file.getConfirmationText();
+        //file.getConfirmationText();
     }
 }

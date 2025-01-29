@@ -13,9 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import pageFactory.SeleniumTab.FlashMovieDemoLink;
 
 import java.io.File;
@@ -35,16 +33,18 @@ public class BaseTest {
     public static String screenShotSubFolderName;
     public static ExtentReports extentReports ;
 
-
+    //@BeforeMethod
     public WebDriver initializeBrowser() throws IOException {
 
         Properties prop = new Properties();
         FileInputStream file = new FileInputStream(System.getProperty("user.dir") +"\\src\\main\\java\\resource\\configFIle.properties");
 
         prop.load(file);
-        String browserName = prop.getProperty("browser");
+        //This line of code pick any browser we give to mvn test
+        String browsername = System.getProperty("browser")!=null ? System.getProperty("browser") : prop.getProperty("browser");
+        //String browserName = prop.getProperty("browser"); // there is another way to pick any browser we give to mvn test instead of this line
 
-        switch (browserName){
+        switch (browsername){
             case "edge":
                 WebDriverManager.edgedriver().setup();
                 driver = new EdgeDriver();
@@ -66,10 +66,16 @@ public class BaseTest {
         return driver;
     }
 
-    @BeforeTest(alwaysRun = true)
-    public void luanchURL() throws IOException {
 
-        driver = initializeBrowser();
+    @BeforeMethod(alwaysRun = true)
+    @Parameters("browser")
+    public void luanchURL(@Optional("chrome") String browser) throws IOException {
+
+        try {
+            driver = initializeBrowser();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         FlashMovieDemoLink flash= new FlashMovieDemoLink(driver);
         flash.goTo();
 
