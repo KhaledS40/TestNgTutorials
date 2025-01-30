@@ -184,6 +184,7 @@ public class InsuranceProjectTab {
     public void confirmPassword() {
 
         confirmPassword.sendKeys("CHEERS123");
+        System.out.println("this is a test line of code");
     }
 
     public void clickCreateButton(){
