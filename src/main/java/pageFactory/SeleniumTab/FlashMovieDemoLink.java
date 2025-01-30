@@ -34,10 +34,6 @@ public class FlashMovieDemoLink {
     @FindBy(css = "input[value='Zoomout']")
     WebElement zoomOutLink;
 
-    public void goTo(){
-
-        driver.get("https://demo.guru99.com/test/flash-testing.html");
-    }
 
     public void clickSeleniumTab(){
 

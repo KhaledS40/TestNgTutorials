@@ -8,13 +8,15 @@ import org.openqa.selenium.support.ui.Select;
 
 public class AgileProjectTab {
 
-    public WebDriver driver;
+    public static WebDriver driver;
 
     public AgileProjectTab(WebDriver driver) {
 
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
+
     @FindBy(xpath = "//a[normalize-space()='Agile Project']") WebElement agileProject;
 
     @FindBy(css = "input[name='uid']") WebElement userID;
@@ -36,16 +38,21 @@ public class AgileProjectTab {
     @FindBy(css = "a[href='Logout.php']") WebElement logoutLink;
 
 
+
     public void clickAgileProject(){
+
         agileProject.click();
     }
     public void enterUserID(){
+
         userID.sendKeys("1303");
     }
     public void enterUserPassword(){
+
         userPassword.sendKeys("Guru99");
     }
     public void clickLogin(){
+
         login.click();
     }
     public void clickCustomerTab(){
@@ -53,19 +60,22 @@ public class AgileProjectTab {
         customerLink.click();
     }
     public void clickMiniStatementTab(){
+
         miniStatementLink.click();
     }
     public void selectUserAccount(){
+
         selectAccount.click();
         Select se = new Select(selectAccount);
         se.selectByVisibleText("3309");
         resetButton.click();
     }
     public void clickHomeButton(){
+
         homeLink.click();
     }
     public void clickLogout(){
+
         logoutLink.click();
     }
-
 }
