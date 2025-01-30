@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
        <suite name="TestNgTutorials" thread-count="2" parallel="tests" >
-    <test name="ChromeTest">
+    <test name="crossBrowsingTest">
         <parameter name="browser" value="Chrome"/>
 
         <classes>
-            <class name="testNG.ParallelExcution.ParallelTest">
+            <class name="testNG.ParallelExcution.ParallelTest"/>
 
-            </class>
         </classes>
     </test>
     <test name="EdgeTest">
         <parameter name="browser" value="Edge"/>
         <classes>
-            <class name="testNG.ParallelExcution.ParallelTest">
+            <class name="testNG.ParallelExcution.ParallelTest"/>
 
-            </class>
+
         </classes>
     </test>
 </suite>
